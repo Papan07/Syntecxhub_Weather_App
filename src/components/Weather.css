@@ -1,10 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?q=80&w=2000') center/cover fixed;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* LOGO */
@@ -21,10 +27,12 @@ body {
 }
 
 .app {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  width: 100%;
 }
 
 /* Layout */
@@ -146,4 +154,143 @@ body {
 
 .app.shake {
   animation: shake 0.5s ease-in-out;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .logo {
+    left: 15px;
+    top: 15px;
+    font-size: 22px;
+  }
+
+  .app {
+    padding: 80px 15px 20px;
+    align-items: flex-start;
+  }
+
+  .weather-wrapper {
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .main-weather {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .forecast-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .temp {
+    font-size: 64px;
+  }
+
+  .icon img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    left: 10px;
+    top: 10px;
+    font-size: 18px;
+  }
+
+  .app {
+    padding: 60px 10px 15px;
+    min-height: 100vh;
+  }
+
+  .weather-wrapper {
+    padding: 20px 15px;
+    gap: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main-weather {
+    width: 100%;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .top input {
+    width: 100%;
+    margin-right: 0;
+    padding: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .top button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .icon img {
+    width: 110px;
+  }
+
+  .temp {
+    font-size: 52px;
+    margin: 8px 0;
+  }
+
+  .desc {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .details > div {
+    padding: 8px 0;
+  }
+
+  .forecast-panel {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .forecast-panel h3 {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+  }
+
+  .forecast-item {
+    font-size: 15px;
+    margin: 12px 0;
+    padding-bottom: 10px;
+  }
+
+  .error-notification {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: calc(100% - 20px);
+    max-width: 100%;
+    left: 10px;
+    transform: none;
+    border-radius: 0 0 8px 8px;
+  }
 }
