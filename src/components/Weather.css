@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?q=80&w=2000') center/cover fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+/* LOGO */
+.logo {
+  position: fixed;
+  top: 0px;
+  left: 40px;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Layout */
+.weather-wrapper {
+  display: flex;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* LEFT SIDE */
+.main-weather {
+  text-align: center;
+  width: 350px;
+}
+
+.top input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 8px;
+  outline: none;
+}
+
+.top button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #38bdf8;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.top button:hover {
+  background: #0ea5e9;
+}
+
+.temp {
+  font-size: 80px;
+  margin: 10px 0;
+}
+
+.desc {
+  font-size: 22px;
+  color: #cbd5e1;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.icon img {
+  width: 150px;
+}
+
+/* RIGHT PANEL */
+.forecast-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 15px;
+  width: 220px;
+}
+
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 8px;
+}
+
+/* ERROR NOTIFICATION - TOP */
+.error-notification {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 0, 0, 0.9);
+  border: 1px solid #ff4d4d;
+  padding: 15px 40px;
+  border-radius: 0 0 10px 10px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1000;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* ERROR BOX */
+.error {
+}
+
+/* SHAKE ANIMATION */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.app.shake {
+  animation: shake 0.5s ease-in-out;
+}
